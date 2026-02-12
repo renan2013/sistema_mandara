@@ -87,16 +87,23 @@ error_reporting(E_ALL);
                     title: data.status === 'success' ? '¡Éxito!' : '¡Error!',
                     text: data.message,
                     confirmButtonText: 'Aceptar'
+                }).then((result) => {
+                    if (data.status === 'success' && result.isConfirmed) {
+                        window.location.href = 'lista_clientes.php';
+                    }
                 });
-                // Limpiar los campos después de enviar el formulario
-                setFecha('');
-                setMesNumerico('');
-                setNombre('');
-                setApellido('');
-                setEmail('');
-                setCelular('');
-                setDireccion('');
-                setObservaciones('');
+                
+                // Limpiar los campos solo si el registro fue exitoso
+                if (data.status === 'success') {
+                    setFecha('');
+                    setMesNumerico('');
+                    setNombre('');
+                    setApellido('');
+                    setEmail('');
+                    setCelular('');
+                    setDireccion('');
+                    setObservaciones('');
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
