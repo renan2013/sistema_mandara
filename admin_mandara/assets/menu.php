@@ -12,7 +12,7 @@
           <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/clientes/">Clientes</a>
+          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/lista_clientes.php">Clientes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/regalo.php">Regalo</a>
