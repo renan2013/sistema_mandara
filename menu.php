@@ -2,7 +2,6 @@
 <img src="https://semillasdelagro.com/pruebas/sistema_mandara/logo_mandara.svg" width="150px" style="display: block; margin: auto;">
 <br/>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid" id="menu">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,5 +38,4 @@
       </ul>
       
     </div>
-  </div>
 </nav>
