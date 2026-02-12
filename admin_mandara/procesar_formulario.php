@@ -1,42 +1,68 @@
 <?php
-// Datos de conexión a la base de datos MySQL
-$host = 'localhost';
-$username = 'u852886994_mandara';
-$password = 'Mandara2023';
-$database = 'u852886994_mandara';
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-// Conexión a la base de datos
-$conn = new mysqli($host, $username, $password, $database);
+header('Content-Type: application/json'); // Ensure JSON response
 
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+// Include database configuration
+$config = include 'config.php';
+
+$response = ['status' => 'error', 'message' => ''];
+
+try {
+    $dsn = 'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['name'];
+    $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
+
+    // Check if form was submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Retrieve and sanitize form data
+        $nombre = filter_input(INPUT_POST, 'Nombre', FILTER_SANITIZE_STRING);
+        $apellido = filter_input(INPUT_POST, 'Apellido', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, 'Email', FILTER_SANITIZE_EMAIL);
+        $celular = filter_input(INPUT_POST, 'Celular', FILTER_SANITIZE_STRING);
+        $edad = filter_input(INPUT_POST, 'fecha', FILTER_SANITIZE_STRING); // This is 'edad' in DB
+        $mes = filter_input(INPUT_POST, 'mesNumerico', FILTER_SANITIZE_NUMBER_INT); // This is 'mes' in DB
+        $direccion = filter_input(INPUT_POST, 'Direccion', FILTER_SANITIZE_STRING);
+        $observaciones = filter_input(INPUT_POST, 'Observaciones', FILTER_SANITIZE_STRING);
+
+        // Basic validation
+        if (empty($nombre) || empty($apellido) || empty($email) || empty($celular)) {
+            $response['message'] = 'Por favor, complete los campos obligatorios: Nombre, Apellido, Email, Celular.';
+            echo json_encode($response);
+            exit();
+        }
+
+        // Prepare SQL INSERT statement
+        $sql = "INSERT INTO alumnos (nombre, apellido, email, edad, mes, celular, direccion, observaciones, created_at, updated_at) 
+                VALUES (:nombre, :apellido, :email, :edad, :mes, :celular, :direccion, :observaciones, NOW(), NOW())";
+        
+        $stmt = $conexion->prepare($sql);
+
+        // Bind parameters
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':apellido', $apellido);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':edad', $edad);
+        $stmt->bindParam(':mes', $mes);
+        $stmt->bindParam(':celular', $celular);
+        $stmt->bindParam(':direccion', $direccion);
+        $stmt->bindParam(':observaciones', $observaciones);
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            $response['status'] = 'success';
+            $response['message'] = 'Cliente registrado con éxito!';
+        } else {
+            $response['message'] = 'Error al registrar el cliente.';
+        }
+    } else {
+        $response['message'] = 'Método de solicitud no válido.';
+    }
+
+} catch (PDOException $e) {
+    $response['message'] = 'Error de base de datos: ' . $e->getMessage();
 }
 
-// Obtener los datos del formulario
-$fecha = $_POST['fecha'];
-$mesNumerico = $_POST['mesNumerico'];
+echo json_encode($response);
 
-$nombre = $_POST['Nombre'];
-$apellido = $_POST['Apellido'];
-$email = $_POST['Email'];
-$celular = $_POST['Celular'];
-$direccion = $_POST['Direccion'];
-$observaciones = $_POST['Observaciones'];
-
-// Preparar la consulta SQL para insertar los datos en la tabla
-$sql = "INSERT INTO alumnos(edad, mes, nombre, apellido, email, celular, direccion, observaciones) VALUES ('$fecha', '$mesNumerico', '$nombre', '$apellido', '$email', '$celular', '$direccion', '$observaciones' )";
-
-// Ejecutar la consulta
-if ($conn->query($sql) === TRUE) {
-    
-    echo "Datos insertados correctamente";
-    
-} else {
-    echo "Error al insertar datos: " . $conn->error;
-}
-
-// Cerrar la conexión
-$conn->close();
 ?>
-
