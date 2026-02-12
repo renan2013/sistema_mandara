@@ -32,16 +32,38 @@
     <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="mt-5 mb-3 d-flex justify-content-between">
+                    <div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
                         <h2 class="mb-0">Clientes</h2>
                         <a href="create.php" class="btn btn-success"><i class="fa fa-plus"></i> Nuevo Cliente</a>
                     </div>
+
                     <?php
                     // Include config file
                     require_once "config.php";
-                    
-                    // Attempt select query execution
-                    $sql = "SELECT * FROM alumnos ORDER BY id DESC";
+
+                    // Define search term and prepare the SQL query
+                    $search_term = '';
+                    $sql = "SELECT * FROM alumnos";
+
+                    if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
+                        $search_term = trim($_GET['search']);
+                        $safe_search_term = mysqli_real_escape_string($link, $search_term);
+                        $sql .= " WHERE nombre LIKE '%" . $safe_search_term . "%' OR apellido LIKE '%" . $safe_search_term . "%'";
+                    }
+
+                    $sql .= " ORDER BY id DESC";
+                    ?>
+
+                    <form action="index.php" method="get" class="mb-4">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="Buscar por nombre o apellido..." value="<?php echo htmlspecialchars($search_term); ?>">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <?php
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo '<div class="table-responsive">';
@@ -75,7 +97,7 @@
                             // Free result set
                             mysqli_free_result($result);
                         } else{
-                            echo '<div class="alert alert-danger"><em>No se encontraron registros.</em></div>';
+                            echo '<div class="alert alert-warning"><em>No se encontraron registros que coincidan con su búsqueda.</em></div>';
                         }
                     } else{
                         echo "Oops! Algo salió mal. Por favor, inténtalo de nuevo más tarde.";
