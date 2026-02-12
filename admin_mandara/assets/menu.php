@@ -1,24 +1,24 @@
 <br/>
-<img src="https://semillasdelagro.com/pruebas/sistema_mandara/logo_mandara.svg" width="150px" style="display: block; margin: auto;">
+<img src="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/assets/imgs/logo_mandara.svg" width="150px" style="display: block; margin: auto;">
 <br/>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="https://semillasdelagro.com/pruebas/sistema_mandara/">Mandara</a>
+      <a class="navbar-brand" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/">Mandara</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/">Inicio</a>
+          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/clientes/">Clientes</a>
+          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/clientes/">Clientes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/regalo.php">Regalo</a>
+          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/regalo.php">Regalo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/lista_citas.php">Citas</a>
+          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/lista_citas.php">Citas</a>
         </li>
        
         <li class="nav-item dropdown">
@@ -26,10 +26,10 @@
             Tienda
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="https://semillasdelagro.com/pruebas/sistema_mandara/tienda/lista_categoria.php">Categorias</a></li>
-            <li><a class="dropdown-item" href="https://semillasdelagro.com/pruebas/sistema_mandara/tienda/lista_productos.php">Productos</a></li>
+            <li><a class="dropdown-item" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/tienda/lista_categoria.php">Categorias</a></li>
+            <li><a class="dropdown-item" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/tienda/lista_productos.php">Productos</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="https://semillasdelagro.com/pruebas/sistema_mandara/tienda/ver_productos.php">Ver tienda</a></li>
+            <li><a class="dropdown-item" href="https://semillasdelagro.com/pruebas/sistema_mandara/admin_mandara/tienda/ver_productos.php">Ver tienda</a></li>
           </ul>
         </li>
        
