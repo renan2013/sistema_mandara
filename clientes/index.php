@@ -26,7 +26,7 @@
 </head>
 <body>
 <?php
-  include "../menu.php";
+  include "../assets/menu.php";
 ?>
 <div class="wrapper">
     <div class="container-fluid">
@@ -90,7 +90,7 @@
     </div>
     <br/>
     <?php
-      include "../footer.php";
+      include "../assets/footer.php";
     ?>
 </body>
 </html>

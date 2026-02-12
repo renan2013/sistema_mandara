@@ -39,7 +39,7 @@
     <div class="form-group">
     <label for="exampleFormControlSelect1">Seleccione la tarjeta de regalo</label>
     <select class="form-control" id="exampleFormControlSelect1" name="nombreImagen">
-      <option value="imgs/hombre_1.png">Tarjeta 1 - Mujer</option>
+      <option value="assets/imgs/hombre_1.png">Tarjeta 1 - Mujer</option>
       <option value="">Tarjeta 2 - Mujer</option>
       <option value="">Tarjeta 1 - Hombre</option>
       <option value="">Tarjeta 2 - Hombre</option>

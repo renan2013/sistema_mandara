@@ -33,7 +33,7 @@
         <label for="exampleFormControlSelect1" class="form-label">Seleccione la tarjeta de regalo</label>
         <select class="form-select" id="exampleFormControlSelect1" name="nombreImagen" required>
             <option value="">Seleccione una opción</option>
-            <option value="imgs/1.png">Tarjeta 1 </option>
+            <option value="assets/imgs/1.png">Tarjeta 1 </option>
            
          
         </select>

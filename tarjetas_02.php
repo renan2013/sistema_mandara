@@ -39,14 +39,14 @@
     <div class="form-group">
     <label for="exampleFormControlSelect1">Seleccione el regalo</label>
     <select class="form-control" id="exampleFormControlSelect1" name="nombreImagen">
-      <option value="imgs/tratamiento_facial.png">Limpieza Facial</option>
-      <option value="imgs/dermapen.png">Dermapén + Limpieza Facial</option>
-      <option value="imgs/tratamiento_reafirmante.png">Reafirmante Facial</option>
-      <option value="imgs/ondulado.png">Ondulado de Pestañas</option>
-      <option value="imgs/micro_ojos.png">Micropigmentación de Ojos</option>
-      <option value="imgs/micropigmentacion labios.png">Micropigmentación de Labios</option>
-      <option value="imgs/micropigmentacion cejas.png">Microblanding de Cejas</option>
-      <option value="imgs/masaje.png">Masaje Relajante</option>
+      <option value="assets/imgs/tratamiento_facial.png">Limpieza Facial</option>
+      <option value="assets/imgs/dermapen.png">Dermapén + Limpieza Facial</option>
+      <option value="assets/imgs/tratamiento_reafirmante.png">Reafirmante Facial</option>
+      <option value="assets/imgs/ondulado.png">Ondulado de Pestañas</option>
+      <option value="assets/imgs/micro_ojos.png">Micropigmentación de Ojos</option>
+      <option value="assets/imgs/micropigmentacion labios.png">Micropigmentación de Labios</option>
+      <option value="assets/imgs/micropigmentacion cejas.png">Microblanding de Cejas</option>
+      <option value="assets/imgs/masaje.png">Masaje Relajante</option>
       <option value="#">Depilación en cera</option>
       <option value="#">Depilación IPL</option>
     </select>

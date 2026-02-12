@@ -19,11 +19,11 @@
            <?php
       
               include '../admin_mandara/templates/header.php';
-              include "menu.php";
+              include "assets/menu.php";
               echo "<br/>";
               echo "<br/>";
               echo "<br/>";
-              include "footer.php";
+              include "assets/footer.php";
           ?>
           </div>
        

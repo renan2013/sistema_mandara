@@ -72,7 +72,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     <div class="wrapper">
         <div class="container-fluid">
         <?php
-          include "../menu.php";
+          include "../assets/menu.php";
           
         ?>
             <div class="row">
@@ -114,7 +114,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     </div>
     <br/>
     <?php
-          include "../footer.php";
+          include "../assets/footer.php";
       ?>
 </body>
 </html>
