@@ -16,14 +16,14 @@ try {
     // Check if form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Retrieve and sanitize form data
-        $nombre = filter_input(INPUT_POST, 'Nombre', FILTER_SANITIZE_STRING);
-        $apellido = filter_input(INPUT_POST, 'Apellido', FILTER_SANITIZE_STRING);
+        $nombre = filter_input(INPUT_POST, 'Nombre', FILTER_UNSAFE_RAW);
+        $apellido = filter_input(INPUT_POST, 'Apellido', FILTER_UNSAFE_RAW);
         $email = filter_input(INPUT_POST, 'Email', FILTER_SANITIZE_EMAIL);
-        $celular = filter_input(INPUT_POST, 'Celular', FILTER_SANITIZE_STRING);
-        $edad = filter_input(INPUT_POST, 'fecha', FILTER_SANITIZE_STRING); // This is 'edad' in DB
+        $celular = filter_input(INPUT_POST, 'Celular', FILTER_UNSAFE_RAW);
+        $edad = filter_input(INPUT_POST, 'fecha', FILTER_UNSAFE_RAW); // This is 'edad' in DB
         $mes = filter_input(INPUT_POST, 'mesNumerico', FILTER_SANITIZE_NUMBER_INT); // This is 'mes' in DB
-        $direccion = filter_input(INPUT_POST, 'Direccion', FILTER_SANITIZE_STRING);
-        $observaciones = filter_input(INPUT_POST, 'Observaciones', FILTER_SANITIZE_STRING);
+        $direccion = filter_input(INPUT_POST, 'Direccion', FILTER_UNSAFE_RAW);
+        $observaciones = filter_input(INPUT_POST, 'Observaciones', FILTER_UNSAFE_RAW);
 
         // Basic validation
         if (empty($nombre) || empty($apellido) || empty($email) || empty($celular)) {
