@@ -63,7 +63,7 @@
                                             echo "<td>" . $row['apellido'] . "</td>";
                                             echo "<td>" . $row['celular'] . "</td>";
                                             echo "<td>";
-                                                echo '<a href="read.php?id='. $row['id'] .'" class="mr-3" title="Ver Cliente" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                                echo '<a href="ver_cliente.php?id='. $row['id'] .'" class="mr-3" title="Ver Cliente" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
                                                 echo '<a href="update.php?id='. $row['id'] .'" class="mr-3" title="Actualizar Cliente" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
                                                 echo '<a href="delete.php?id='. $row['id'] .'" title="Borrar Cliente" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                             echo "</td>";
