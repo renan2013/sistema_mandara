@@ -87,6 +87,7 @@ if (isset($_POST['submit'])) {
     <div class="row">
         <div class="col-md-12">
             <h2 class="mt-4 mb-3">Registrar Cita</h2>
+            <p class="text-muted">Última actualización: <?php echo date("Y-m-d H:i:s"); ?></p>
             <hr>
             <?php
             if (isset($resultado) && $resultado['error']) {
