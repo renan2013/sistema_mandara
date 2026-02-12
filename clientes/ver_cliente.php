@@ -5,7 +5,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     require_once "config.php";
     
     // Prepare a select statement
-    $sql = "SELECT * FROM employees WHERE id = ?";
+    $sql = "SELECT * FROM alumnos WHERE id = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -24,9 +24,13 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 
                 // Retrieve individual field value
-                $name = $row["name"];
-                $address = $row["address"];
-                $salary = $row["salary"];
+                $nombre = $row["nombre"];
+                $apellido = $row["apellido"];
+                $email = $row["email"];
+                $celular = $row["celular"];
+                $edad = $row["edad"];
+                $direccion = $row["direccion"];
+                $observaciones = $row["observaciones"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -51,14 +55,17 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Record</title>
+    <title>Ver Cliente</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-       
+       .wrapper{
+            width: 90%;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -71,20 +78,36 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
             <div class="row">
            
                 <div class="col-md-12">
-                    <h3 class="mt-5 mb-3">Ver Registro</h3>
+                    <h3 class="mt-5 mb-3">Ver Cliente</h3>
                     <div class="form-group">
-                        <label>Name</label>
-                        <p><b><?php echo $row["name"]; ?></b></p>
+                        <label>Nombre</label>
+                        <p><b><?php echo $nombre; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Address</label>
-                        <p><b><?php echo $row["address"]; ?></b></p>
+                        <label>Apellido</label>
+                        <p><b><?php echo $apellido; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Salary</label>
-                        <p><b><?php echo $row["salary"]; ?></b></p>
+                        <label>Email</label>
+                        <p><b><?php echo $email; ?></b></p>
                     </div>
-                    <p><a href="index.php" class="btn btn-primary">Back</a></p>
+                    <div class="form-group">
+                        <label>Celular</label>
+                        <p><b><?php echo $celular; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de Nacimiento</label>
+                        <p><b><?php echo $edad; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección</label>
+                        <p><b><?php echo $direccion; ?></b></p>
+                    </div>
+                    <div class="form-group">
+                        <label>Observaciones</label>
+                        <p><b><?php echo $observaciones; ?></b></p>
+                    </div>
+                    <p><a href="index.php" class="btn btn-primary">Volver</a></p>
                 </div>
             </div>        
         </div>
