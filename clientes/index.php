@@ -34,7 +34,7 @@
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 d-flex justify-content-between align-items-center">
                         <h2 class="mb-0">Clientes</h2>
-                        <a href="create.php" class="btn btn-success"><i class="fa fa-plus"></i> Nuevo Cliente</a>
+                        <a href="formulario.php" class="btn btn-success"><i class="fa fa-plus"></i> Nuevo Cliente</a>
                     </div>
 
                     <?php
