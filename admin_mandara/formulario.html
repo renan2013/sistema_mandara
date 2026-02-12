@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario React</title>
+</head>
+<body>
+    <div id="formulario"></div>
+
+    <!-- React.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+
+    <!-- Babel para transpilar JSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        // Define el componente del formulario
+        function Formulario() {
+            const [fecha, setFecha] = React.useState('');
+            const [mesNumerico, setMesNumerico] = React.useState('');
+
+            const handleChangeFecha = (event) => {
+                const fecha = event.target.value;
+                const fechaObj = new Date(fecha);
+                const mesNumerico = fechaObj.getMonth() + 1; // Obtiene el número del mes (los meses comienzan desde 0)
+                setFecha(fecha);
+                setMesNumerico(mesNumerico);
+            };
+
+            return (
+                <form>
+                    <label>
+                        Ingrese la fecha de Nacimiento:
+                        <input type="date" value={fecha} onChange={handleChangeFecha} />
+                    </label>
+                    <br />
+                    <label>
+                        Mes (valor numérico):
+                        <input type="text" value={mesNumerico} readOnly />
+                    </label>
+                </form>
+            );
+        }
+
+        // Renderiza el componente del formulario en el div con id "formulario"
+        ReactDOM.render(<Formulario />, document.getElementById('formulario'));
+    </script>
+</body>
+</html>
