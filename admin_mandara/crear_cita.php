@@ -122,6 +122,9 @@ if (isset($_POST['submit'])) {
                             $query = "SELECT id, nombre, apellido FROM alumnos ORDER BY apellido ASC ";
                             $data = $db_conexion->prepare($query);
                             $data->execute();
+                            $alumnos = $data->fetchAll(PDO::FETCH_ASSOC);
+                            var_dump($alumnos);
+                            exit;
 
                             while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
                                 echo '<option value="' . htmlspecialchars($row['id']) . '">' . htmlspecialchars($row['apellido']) . ' ' . htmlspecialchars($row['nombre']) . '</option>';
