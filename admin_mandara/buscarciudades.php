@@ -91,13 +91,5 @@ if ($_POST["paiselegido"]=="Corporal") {
 
     ';  
 }
-if ($_POST["paiselegido"]==3) {
-    $html = '
-    <option value="1">CDMX</option>
-    <option value="2">Monterrey</option>
-    <option value="3">Guadalajara</option>
-    <option value="4">Tijuana</option>
-    ';  
-}
 echo $html; 
 ?>
