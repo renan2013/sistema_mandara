@@ -14,12 +14,15 @@
         </head>
       
         <body>
+          <?php
+            include "assets/menu.php";
+          ?>
           <div class="container">
 
            <?php
       
               include '../admin_mandara/templates/header.php';
-              include "assets/menu.php";
+              
               echo "<br/>";
               echo "<br/>";
               echo "<br/>";
