@@ -80,12 +80,12 @@ error_reporting(E_ALL);
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(data => {
                 Swal.fire({
-                    icon: 'success',
-                    title: '¡Éxito!',
-                    text: data, // Assuming 'data' contains the success message
+                    icon: data.status === 'success' ? 'success' : 'error',
+                    title: data.status === 'success' ? '¡Éxito!' : '¡Error!',
+                    text: data.message,
                     confirmButtonText: 'Aceptar'
                 });
                 // Limpiar los campos después de enviar el formulario
