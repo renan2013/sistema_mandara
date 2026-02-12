@@ -25,11 +25,11 @@
     </script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <?php
-              include "../menu.php";
-            ?>
+<?php
+  include "../menu.php";
+?>
+<div class="wrapper">
+    <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 d-flex justify-content-between">
