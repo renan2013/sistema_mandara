@@ -10,10 +10,10 @@
       <a class="navbar-brand" href="https://semillasdelagro.com/pruebas/sistema_mandara/">Mandara</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/">Inicio...</a>
+          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/">Clientes...</a>
+          <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/">Clientes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="https://semillasdelagro.com/pruebas/sistema_mandara/regalo.php">Regalo</a>
