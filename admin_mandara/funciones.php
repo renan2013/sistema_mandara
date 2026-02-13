@@ -5,7 +5,9 @@ function escapar($html) {
 
 function csrf() {
 
-  session_start();
+  if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+  }
 
   if (empty($_SESSION['csrf'])) {
     if (function_exists('random_bytes')) {

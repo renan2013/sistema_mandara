@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 include 'funciones.php';
 $config = include 'config.php';
 
-// csrf(); // Call csrf function to start session and generate token
+csrf(); // Call csrf function to start session and generate token
 
 if (isset($_POST['submit']) && !hash_equals($_SESSION['csrf'], $_POST['csrf'])) {
   die("Error CSRF: Solicitud no válida.");
