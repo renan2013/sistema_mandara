@@ -115,6 +115,7 @@ if (isset($_POST['submit'])) {
                     <select name="id" id="id" class="form-control" required>
                         <option value="">Seleccione...</option>
                         <?php
+                        echo "DEBUG: PHP block reached."; exit;
                         // Correct database connection using PDO from config.php
                         try {
                             $dsn_config = include 'config.php'; // Get config from config.php
@@ -122,9 +123,6 @@ if (isset($_POST['submit'])) {
                             $query = "SELECT id, nombre, apellido FROM alumnos ORDER BY apellido ASC ";
                             $data = $db_conexion->prepare($query);
                             $data->execute();
-                            $alumnos = $data->fetchAll(PDO::FETCH_ASSOC);
-                            var_dump($alumnos);
-                            exit;
 
                             while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
                                 echo '<option value="' . htmlspecialchars($row['id']) . '">' . htmlspecialchars($row['apellido']) . ' ' . htmlspecialchars($row['nombre']) . '</option>';
