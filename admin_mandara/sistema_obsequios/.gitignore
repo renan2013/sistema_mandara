@@ -1,0 +1,10 @@
+# Ignore generated images
+cumpleanios_*.png
+
+# Ignore environment-specific configurations
+.htaccess
+
+# Ignore common temporary files
+*.log
+*.temp
+*.tmp
