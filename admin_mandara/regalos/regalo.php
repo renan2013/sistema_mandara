@@ -24,7 +24,7 @@
     <hr>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <a href="cumple.php" class="btn btn-success btn-lg btn-block btn-custom"><span class="fa fa-birthday-cake"></span> Lista de Cumpleaños</a>
+            <a href="cumple_nuevo.php" class="btn btn-success btn-lg btn-block btn-custom"><span class="fa fa-birthday-cake"></span> Lista de Cumpleaños</a>
             <a href="tarjetas_02.php" class="btn btn-primary btn-lg btn-block btn-custom"><span class="fa fa-gift"></span> Regalo Mandara</a>
             <a href="cumple_2.php" class="btn btn-danger btn-lg btn-block btn-custom"><span class="fa fa-gift"></span> Tarjeta de Cumpleaños</a>
         </div>
