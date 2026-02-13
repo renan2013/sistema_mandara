@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 include 'funciones.php';
 $config = include 'config.php';
 
-csrf(); // Call csrf function to start session and generate token
+// csrf(); // Call csrf function to start session and generate token
 
 if (isset($_POST['submit']) && !hash_equals($_SESSION['csrf'], $_POST['csrf'])) {
   die("Error CSRF: Solicitud no válida.");
@@ -115,7 +115,6 @@ if (isset($_POST['submit'])) {
                     <select name="id" id="id" class="form-control" required>
                         <option value="">Seleccione...</option>
                         <?php
-                        echo "DEBUG: PHP block reached."; exit;
                         // Correct database connection using PDO from config.php
                         try {
                             $dsn_config = include 'config.php'; // Get config from config.php
