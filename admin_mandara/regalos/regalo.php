@@ -1,11 +1,3 @@
-<?php
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,7 +14,7 @@ error_reporting(E_ALL);
 </head>
 <body>
 
-<?php include "assets/menu.php"; ?>
+<?php include "../assets/menu.php"; ?>
 
 <div class="container mt-4">
     <div class="text-center">
@@ -39,7 +31,7 @@ error_reporting(E_ALL);
     </div>
 </div>
 
-<?php include "assets/footer.php"; ?>
+<?php include "../assets/footer.php"; ?>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
